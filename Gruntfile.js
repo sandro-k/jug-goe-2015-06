@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         },
         browserSync: {
             bsFiles: {
-                src: 'talk/css/*.css'
+                src: ['talk/css/*.css', 'talk/*.html']
             },
             options: {
                 server: {
