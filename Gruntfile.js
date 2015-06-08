@@ -25,7 +25,11 @@ module.exports = function (grunt) {
             options: {
                 server: {
                     watchTask: true,
-                    baseDir: "./talk"
+                    baseDir: "talk",
+                    index: "index.html",
+                    routes: {
+                        "/bower_components": "bower_components"
+                    }
                 }
             }
         }
