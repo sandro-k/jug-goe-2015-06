@@ -1,0 +1,22 @@
+{
+  "name": "jug-goe-2015-06",
+  "version": "1.0.0",
+  "description": "Java User Group Göttingen talk about polymer 1.0",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandro-k/jug-goe-2015-06.git"
+  },
+  "author": "Sandro Kock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sandro-k/jug-goe-2015-06/issues"
+  },
+  "homepage": "https://github.com/sandro-k/jug-goe-2015-06#readme",
+  "devDependencies": {
+    "bower": "^1.4.1"
+  }
+}
