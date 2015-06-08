@@ -6,3 +6,17 @@
 // ---------------------------------------------
 //@import "../.settings";
 @import "../../bower_components/reveal.js/css/theme/template/theme";
+
+.reveal pre code {
+  background: none;
+}
+
+.reveal pre {
+  padding: 8px 16px;
+  box-shadow: none;
+}
+
+img .responsive  {
+  height: auto;
+  max-width: 100%;
+}
