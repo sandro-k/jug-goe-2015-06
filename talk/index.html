@@ -1,41 +1,381 @@
 <!doctype html>
-
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>JUG GOE 2015/06 - Polymer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="elements.html">
+  <!--<title>JUG GOE 2015/06 - Polymer</title>-->
+  <!--<link rel="import" href="elements.html">-->
+  <!--<link rel="stylesheet" href="../bower_components/google-code-prettify/styles/">-->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="import" href="elements.html">
+  <style>
+    code, pre {
+      color: #9f499b;
+      font-family: "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", monospace
+    }
+
+    pre, .prettyprint {
+      background-color: #fafafa;
+      padding: 16px;
+      margin: 30px 0
+    }
+
+    pre .typ, pre .inline, .prettyprint .typ, .prettyprint .inline {
+      color: #6b499f
+    }
+
+    pre .pun, .prettyprint .pun {
+      color: #5c6bc0
+    }
+
+    pre .str, pre .string, .prettyprint .str, .prettyprint .string {
+      color: #ff4081
+    }
+
+    pre .pln, .prettyprint .pln {
+      color: #7986cb
+    }
+
+    pre .kwd, .prettyprint .kwd {
+      color: #d61a7f
+    }
+
+    pre .atn, pre .attribute-name, .prettyprint .atn, .prettyprint .attribute-name {
+      color: #6b499f
+    }
+
+    pre .atv, pre .attribute-value, .prettyprint .atv, .prettyprint .attribute-value {
+      color: #7986cb
+    }
+
+    pre .com, pre .comment, .prettyprint .com, .prettyprint .comment {
+      color: #8a8a8a
+    }
+  </style>
 </head>
 <body>
+
+<!-- Wrap the entire slide show in a div using the "reveal" class. -->
 <div class="reveal">
+  <!-- Wrap all slides in a single "slides" class -->
   <div class="slides">
-    <section>
-      Foo
-    </section>
-    <section>
 
-    </section>
+    <!-- 1 -->
     <section>
+      <marked-element>
+        <script type="text/markdown">
+          # About me
+          Sandro Kock
+          * github - sandro-k
+          * twitter - @_syn_k
+          * MQTTlens - http://goo.gl/fM0AY2
+          * Slides - github.com/sandro-k/jug-goe-2015-06
+          * Arbeitgeber - [SSV Software Systems GmbH](http://ssv-embedded.de/)
 
+
+        </script>
+      </marked-element>
     </section>
+    <!-- 2 -->
+    <section>
+      <!--2.1-->
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          # Web Entwicklung
+          Webentwicklung nicht trivial
+          * HTML
+            * statisch vs. dynamisch
+          * CSS
+            * Responsive (Media Queries)
+            * SASS / LESS
+          * JavaScript
+            * jQuery
+          </script>
+        </marked-element>
+      </section>
+      <!--2.2-->
+      <section>
+        <iframe class="stretch" frameborder=0
+                width=100%
+                height=800px
+                marginheight=0
+                marginwidth=0
+                scrolling=yes
+                src="http://getbootstrap.com/examples/theme"></iframe>
+      </section>
+
+      <!--2.3-->
+      <section>
+        <!--<iframe class="stretch" frameborder=0-->
+                <!--width=100%-->
+                <!--height=800px-->
+                <!--marginheight=0-->
+                <!--marginwidth=0-->
+                <!--scrolling=yes-->
+                <!--src="http://foundation.zurb.com"></iframe>-->
+      </section>
+
+      <!--2.4-->
+      <section>
+        <iframe class="stretch" frameborder=0
+                width=100%
+                height=800px
+                marginheight=0
+                marginwidth=0
+                scrolling=yes
+                src="http://semantic-ui.com"></iframe>
+      </section>
+
+      <!--2.5-->
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          # SPA Frameworks
+          * [Angular.js](https://angularjs.org/)
+          * [Ember.js](http://emberjs.com/)
+          * [Backbone.js](http://backbonejs.org/)
+
+          </script>
+        </marked-element>
+      </section>
+    </section>
+
+    <!--3-->
+    <section>
+      <!--3.1 -->
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          # Web Components
+          > The component model for the Web
+          >
+          > -- <cite>W3C</cite>
+
+          </script>
+        </marked-element>
+        <ul>
+          <li>
+            HTML Templates
+          </li>
+          <li>
+            Custom Elements
+          </li>
+          <li>
+            Shadow DOM
+          </li>
+          <li>
+            HTML Imports
+          </li>
+
+        </ul>
+      </section>
+
+      <!--3.2-->
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+            ## HTML Templates
+
+          </script>
+        </marked-element>
+        <pre class="prettyprint lang-html">
+&lt;template id=&quot;helloWorld&quot;&gt;<br/>  &lt;h1&gt;&lt;/h1&gt;<br/>&lt;/template&gt;<br/>&lt;script&gt;<br/>  function addTemplate() {<br/>    var t = document.querySelector(&quot;#helloWorld&quot;);<br/>    var comment = t.content.cloneNode(true);<br/>    // Populate content.<br/>    comment.querySelector('h1').textContent = &quot;Hello world!&quot;;<br/>    document.body.appendChild(comment);<br/>  }<br/>&lt;/script&gt;
+        </pre>
+      </section>
+
+      <!--3.3-->
+      <section id="customElements">
+        <marked-element>
+          <script type="text/markdown">
+            ## Custom Elements
+
+          </script>
+        </marked-element>
+
+        <pre class="prettyprint lang-html">
+&lt;template id=&quot;customTemplate&quot;&gt;<br/>  &lt;style&gt;<br/>    p { color: orange; }<br/>  &lt;/style&gt;<br/>  &lt;p&gt;<br/>   Whooo a custom HTML-Element!<br/>  &lt;/p&gt;<br/>&lt;/template&gt;<br/>&lt;script&gt;<br/>  var proto = Object.create(HTMLElement.prototype, {<br/>    createdCallback: {<br/>      value: function() {<br/>        var t = document.querySelector('#customTemplate');<br/>        var clone = document.importNode(t.content, true);<br/>        this.createShadowRoot().appendChild(clone);<br/>      }<br/>    }<br/>  });<br/>  document.registerElement('demo-element', {prototype: proto});<br/>&lt;/script&gt;
+        </pre>
+
+        <template id="customTemplate">
+          <style>
+            p { color: orange; }
+          </style>
+          <p>
+            Whooo a custom HTML-Element
+          </p>
+        </template>
+        <script>
+          var proto = Object.create(HTMLElement.prototype, {
+            createdCallback: {
+              value: function() {
+                var t = document.querySelector('#customTemplate');
+                var clone = document.importNode(t.content, true);
+                this.createShadowRoot().appendChild(clone);
+              }
+            }
+          });
+          document.registerElement('demo-element', {prototype: proto});
+        </script>
+
+        <demo-element class="fragment"></demo-element>
+      </section>
+
+      <!--3.4-->
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+            ## Shadow DOM
+            * Scoping für HTML Element
+            * Styling hat keinen effekt auf Element ausserhalb vom Shadow DOM
+            * Erschwert auch das Stylen von Element
+
+          </script>
+        </marked-element>
+
+
+        <template id="customTemplate2">
+          <style>
+            div {
+              display: inline-block;
+              position: relative;
+              color: orange;
+            }
+
+            .badge {
+              position: absolute;
+              right: calc(4%);
+              top: calc(-34%);
+              background: lightgreen;
+              color: white;
+              border-radius: 50%;
+              padding: 8px;
+              font-size: 15px;
+            }
+          </style>
+          <div>
+            Whooo a custom HTML-Element!
+            <span class="badge">+1</span>
+          </div>
+        </template>
+
+        <script>
+          var proto2 = Object.create(HTMLElement.prototype, {
+            createdCallback: {
+              value: function () {
+                var t = document.querySelector('#customTemplate2');
+                var clone = document.importNode(t.content, true);
+                this.createShadowRoot().appendChild(clone);
+              }
+            }
+          });
+          document.registerElement('demo-element2', {prototype: proto2});
+        </script>
+        <demo-element2></demo-element2>
+      </section>
+
+      <!--3.5-->
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+            ## HTML Imports
+            * Impotieren von HTML-Dokumenten
+            * Z.B. Templates oder Skripte
+          </script>
+        </marked-element>
+        <pre class="prettyprint lang-html">
+&lt;link rel=&quot;import&quot; href=&quot;template.html&quot;&gt;
+        </pre>
+
+      </section>
+    </section>
+
+    <!--4-->
+    <section>
+      <!--4.1-->
+      <section>
+        <h1>Polymer</h1>
+        <img class="resposive" src="img/polymer.png"/>
+      </section>
+    </section>
+
+
+    <!--5-->
+    <section>
+      <marked-element>
+        <script type="text/markdown">
+          # Tools
+        </script>
+      </marked-element>
+    </section>
+
+    <!--6-->
+    <section>
+      <marked-element>
+        <script type="text/markdown">
+          # Ressourcen
+
+        </script>
+      </marked-element>
+    </section>
+
+    <!--6-->
+    <section>
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+            # Demos
+
+
+
+
+
+
+          </script>
+        </marked-element>
+      </section>
+      <section>
+        <ul>
+          <li>
+            <a href="http://rtdc.ssv-embedded.de/" target="_blank">RTDC-Demo</a>
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <!--7-->
+    <section>
+      <marked-element>
+        <script type="text/markdown">
+          #
+
+
+        </script>
+      </marked-element>
+    </section>
+
   </div>
 </div>
+
+
+<!--<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>-->
+<script src="../bower_components/google-code-prettify/src/prettify.js"></script>
 <script src="../bower_components/reveal-js/lib/js/head.min.js"></script>
 <script src="../bower_components/reveal-js/js/reveal.js"></script>
+
+<script type='text/javascript'>
+  document.addEventListener('DOMContentLoaded', function () {
+    prettyPrint();
+  });
+</script>
+<!---->
 <script>
   // Full list of configuration options available at:
   // https://github.com/hakimel/reveal.js#configuration
   Reveal.initialize({
-    controls: false,
-    progress: true,
-    history: true,
+    transition: "none",
     center: false
-//    transition: 'none' // none/fade/slide/convex/concave/zoom
-    // Optional reveal.js plugins
   });
 </script>
+
 </body>
 </html>
