@@ -1,4 +1,8 @@
-@import "reveal";
-@import "settings";
-@import "../../bower_components/reveal-js/css/theme/template/mixins";
-@import "../../bower_components/reveal-js/css/theme/template/theme";
+@import "../../bower_components/reveal.js/css/reveal";
+// Default mixins and settings -----------------
+@import "../../bower_components/reveal.js/css/theme/template/settings";
+@import "../../bower_components/reveal.js/css/theme/template/mixins";
+@import "../../bower_components/reveal.js/css/theme/source/simple";
+// ---------------------------------------------
+//@import "../.settings";
+@import "../../bower_components/reveal.js/css/theme/template/theme";
