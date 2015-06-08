@@ -35,8 +35,11 @@ module.exports = function (grunt) {
         }
     });
 
+    // load npm tasks
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
 
-    grunt.registerTask('default', ['browserSync']);
+    grunt.registerTask('default', ['sass','browserSync', 'watch']);
 
 };
