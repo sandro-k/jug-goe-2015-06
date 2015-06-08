@@ -1,0 +1,1 @@
+# Talk about Polymer 1.0 at the JUG Göttingen 2015/06
