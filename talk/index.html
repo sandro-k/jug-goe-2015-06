@@ -58,6 +58,14 @@
 <div class="reveal">
   <!-- Wrap all slides in a single "slides" class -->
   <div class="slides">
+    <!--0-->
+    <section>
+      <marked-element>
+        <script type="text/markdown">
+          (Web-) Development with Web Components and Polymer
+        </script>
+      </marked-element>
+    </section>
 
     <!-- 1 -->
     <section>
@@ -293,11 +301,152 @@
     <section>
       <!--4.1-->
       <section>
-        <h1>Polymer</h1>
-        <img class="resposive" src="img/polymer.png"/>
-      </section>
-    </section>
+        <marked-element>
+          <script type="text/markdown">
+            # Polymer
+            * native Browserunterstüzung für Web Components?
+            * `Webcomponents.js` ist ein Polyfill für Browser die noch keine native Unterstüzung bieten
+            * Polymer ist ein Framework um die erstellung von Web Components zu erleichtern
 
+            > Everything is an element
+          </script>
+        </marked-element>
+      </section>
+      <!--4.2-->
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Polymer
+            * Polymer ist deklerativ
+            * Nicht nur vistuelle Element wie `<button>` oder `<img />`
+            * Auch funktionale Element wie `<iron-ajax>` um `ajax` oder `XMLHttpRequest` Anfragen über DOM-Element zu senden
+          </script>
+        </marked-element>
+      </section>
+
+      <!--4.3-->
+      <section>
+        <span><h2>Custom Element</h2> with Polymer</span>
+        <pre class="prettyprint lang-html">
+
+        </pre>
+        <demo-greeting></demo-greeting>
+        <demo-greeting greeting="Hello JUG!"></demo-greeting>
+        <!--<template is-->
+      </section>
+
+      <!--4.4-->
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Data Binding
+          * two way data binding with {{var}}
+          * one way data binding with [[var]]
+          </script>
+        </marked-element>
+        <demo-binding id="dataBindingDemo"></demo-binding>
+        <demo-binding2></demo-binding2>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Computed bindings
+          </script>
+        </marked-element>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Computed properties
+          </script>
+        </marked-element>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Usage of user supplied content
+          `<content><content>`
+          </script>
+        </marked-element>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Scoped CSS
+          * `:host` selector
+          * theming of custom element with `custom css properties`
+
+          </script>
+        </marked-element>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Declared Properties
+          </script>
+        </marked-element>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Events
+          * `on-*` event
+          * use `on-tab` instead of `on-click`
+          * `on*Changed` to observe changes
+          </script>
+        </marked-element>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Observers
+          * Path changes watch `user.manager.name`
+          * Wildcards with `*`
+          * Array observation
+          </script>
+        </marked-element>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Behavior
+          </script>
+        </marked-element>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Utility Functions
+          </script>
+        </marked-element>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Coding Conventions
+          </script>
+        </marked-element>
+      </section>
+
+      <section>
+        <marked-element>
+          <script type="text/markdown">
+          ## Inheritance / Extending
+          </script>
+        </marked-element>
+      </section>
+
+    </section>
 
     <!--5-->
     <section>
@@ -308,12 +457,28 @@
       </marked-element>
     </section>
 
+    <section>
+      <marked-element>
+        <script type="text/markdown">
+          ## NPM
+          </script>
+      </marked-element>
+    </section>
+
+    <section>
+      <marked-element>
+        <script type="text/markdown">
+          ## Bower
+          </script>
+      </marked-element>
+    </section>
+
+
     <!--6-->
     <section>
       <marked-element>
         <script type="text/markdown">
           # Ressourcen
-
         </script>
       </marked-element>
     </section>
@@ -324,12 +489,6 @@
         <marked-element>
           <script type="text/markdown">
             # Demos
-
-
-
-
-
-
           </script>
         </marked-element>
       </section>
@@ -347,8 +506,6 @@
       <marked-element>
         <script type="text/markdown">
           #
-
-
         </script>
       </marked-element>
     </section>
@@ -357,7 +514,7 @@
 </div>
 
 
-<!--<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>-->
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 <script src="../bower_components/google-code-prettify/src/prettify.js"></script>
 <script src="../bower_components/reveal-js/lib/js/head.min.js"></script>
 <script src="../bower_components/reveal-js/js/reveal.js"></script>
