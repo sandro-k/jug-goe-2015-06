@@ -19,7 +19,6 @@
     "polymer": "Polymer/polymer#~1.0.3",
     "marked-element": "PolymerElements/marked-element#~1.0.0",
     "reveal.js": "hakimel/reveal.js#~3.1.0",
-    "google-code-prettify": "~1.0.4",
-    "cytoscape": "~2.4.1"
+    "google-code-prettify": "~1.0.4"
   }
 }
