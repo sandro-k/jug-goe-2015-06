@@ -7,14 +7,20 @@
 //@import "../.settings";
 @import "../../bower_components/reveal.js/css/theme/template/theme";
 
-.reveal pre code {
-  background: none;
+
+.reveal {
+  h1 {
+    font-size: 2.77em;
+  }
+  pre {
+    padding: 8px 16px;
+    box-shadow: none;
+    code {
+      background: none;
+    }
+  }
 }
 
-.reveal pre {
-  padding: 8px 16px;
-  box-shadow: none;
-}
 
 img .responsive  {
   height: auto;
