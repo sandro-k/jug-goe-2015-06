@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         watch: {
-            files: 'talk/scss/*.scss',
+            files: 'talk/scss/main.scss',
             tasks: ['sass']
         },
         sass: {
@@ -40,6 +40,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
 
-    grunt.registerTask('default', ['sass','browserSync', 'watch']);
+    grunt.registerTask('default', ['sass', 'browserSync', 'watch']);
 
 };
